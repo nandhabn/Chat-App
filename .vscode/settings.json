@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 12,
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": false,
+    "python.linting.pydocstyleEnabled": false,
+    "python.linting.flake8Enabled": true
+}

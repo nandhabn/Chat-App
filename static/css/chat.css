@@ -1,0 +1,81 @@
+/*.mainDiv{
+    margin: 30px 250px 10px 250px;  
+    padding: 0px; 
+    border-radius: 50px;
+    height: 640px;    
+}*/
+/*
+#hder span{
+    font-size: 50px;
+    position: absolute;
+
+}
+#hder{
+    margin: 10px 0px 0px 340px;
+    padding: 10px 0px;
+}
+#chatbder{
+    margin: 10px;
+    height: 520px;
+    padding: 1px 1px;
+    border-radius: 40px;
+}
+#chatbd{
+    margin: 1px;
+    height: 480px;...
+    border-radius: 40px;
+}...
+......
+#msgsw{
+    border-radius: 5%;
+}*/
+#oblogo{
+    padding: 8px 0px 0px 10px;
+    height: 50px;
+}
+#chatbd pre{
+    margin: 5px 10px;
+    border-radius: 5%;
+    color: black;
+    width: 100%;
+    border: 0px;
+}    
+#chatbd pre pre{
+    padding: 5px;
+    font-size: 7px;
+}
+.b{
+    background-color: rgba(245, 226, 194, 0.53);
+    float: right;
+    border: 5px #000;
+}
+.a{
+  float : left;  
+}
+
+#messIn{
+    padding-left: 3px;
+    margin: 1px;
+    height: 25px;
+    width: 50%;
+    float: right;
+    
+}
+#btn{
+    
+    float: right;
+}
+.msgsnd{
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    right: 0px;
+    position: fixed;
+}
+#chatbd{
+    overflow-y: auto;
+    
+}
+.cter{
+    font-family: 'ZCOOL KuaiLe', cursive;
+}
