@@ -4,7 +4,7 @@ ser=Flask(__name__)
 
 database={"totmes":0}
 logedin={}
-login_details={'nandha':{'password':'nandha','dept':'cse','batch':'2017'},'mani':{"password":"mani"}}
+login_details={}
 
 
 @ser.route('/')
