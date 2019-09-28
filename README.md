@@ -2,5 +2,5 @@
 ### simple localhost chat app
 
 
-<img src="./screen/IMG.jpg">
+<img src="./screen/Home.jpg">
 
