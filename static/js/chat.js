@@ -5,7 +5,8 @@ function inter(){
 function msgupdate(){
     var mesto=document.getElementById("chatbd");
     var mesfrm=document.getElementById("messIn").value;
-    
+    mesto.focus();
+    document.getElementById("messIn").focus()
     if (!mesfrm=="")
     {
     var xhttp = new XMLHttpRequest();
@@ -17,24 +18,24 @@ function msgupdate(){
 
         if (this.readyState == 4 && this.status == 200) {
             var temp= xhttp.responseText;
-            var t = document.createTextNode(temp);
-            var sp2=document.createElement("SPAN");
-            pre=document.createElement("PRE")
-            pre.setAttribute("class","cter")
-            pre.appendChild(document.createTextNode(document.cookie.split(';')[0].toString().substr(6)))
-            sp2.appendChild(pre)
-            sp2.appendChild(document.createElement("BR"))
-            pre2=document.createElement("PRE")
-            pre2.appendChild(t)
-            pre2.setAttribute("class","ctmsg")
-            sp2.appendChild(pre2)
-            sp2.setAttribute("class","b");
-            var para = document.createElement("PRE");
-            para.appendChild(sp2);
-            mesto.appendChild(para);
             document.getElementById("messIn").value="";
+           
+            var p=document.createElement("p")
+            p.setAttribute("class","bmsg")
+            var span1=document.createElement("span")
+            var span2=document.createElement("span")
+            span1.setAttribute("class","a")
+            span2.setAttribute("class","msg")
+            var div=document.createElement("div")
+            div.appendChild(p)
+            div.setAttribute("class","chat")
+            p.appendChild(span1)
+            p.appendChild(span2)
+            span1.innerText="Me"
+            span2.innerText=temp
+            mesto.appendChild(div)
             document.getElementById("tnu").value=xhttp.getResponseHeader('count');
-            
+            document.getElementById("messIn").value="";
         }
     };
     xhttp.open("POST", "./chat", true );
@@ -56,13 +57,12 @@ function autore()
         }
         
         if (this.readyState == 4 && this.status == 200) {
-            para= xhttp.responseText;
-            if(para!="")
+            var p= xhttp.responseText;
+            if(p!="")
             {    
-            mesto.innerHTML=mesto.innerHTML+para
+            mesto.innerHTML=mesto.innerHTML+p
             document.getElementById("tnu").value=xhttp.getResponseHeader('count');
-            
-
+            console.log(xhttp.getResponseHeader('count'));
             }
         }
         

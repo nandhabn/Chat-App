@@ -4,7 +4,7 @@ ser=Flask(__name__)
 
 database={"totmes":0}
 logedin={}
-login_details={'nandha':{'password':'nandha','dept':'cse','batch':'2017'},'mani':{"password":"mani"}}
+login_details={'nandha':{'password':'nandha'},'mani':{"password":"mani"},"pooja":{"password":"1506"}}
 
 
 @ser.route('/')
@@ -26,7 +26,7 @@ def login():
             res=redirect(url_for("chat"))    
             res.set_cookie("uname", uname)
             res.set_cookie("rm",rm)
-            return res       
+            return res
         else:
             return render_template("login.html",pserror="Invalid username or password.")
 
@@ -58,9 +58,9 @@ def chat():
                     ret=""
                     for i in range(count,database['totmes']):
                         if(uname!=database[i]['uname']):
-                            ret+='<pre><span class="a">'+database[i]['uname']+'<br>'+database[i]['mes']+'</span></pre>'
+                            ret+='<div class="chat"><p class="amsg"><span class="a">'+database[i]['uname']+'</span><span class="msg">'+database[i]['mes']+'</span></p></div>'
                         else:
-                            ret+='<pre><span class="b">'+uname+'<br>'+database[i]['mes']+'</span></pre>'
+                            ret+='<div class="chat"><p class="bmsg"><span class="b">Me</span><span class="msg">'+database[i]['mes']+'</span></p></div>'
                     res=make_response(ret)
                     res.headers['count']=database['totmes']
                     return res

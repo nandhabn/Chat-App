@@ -1,60 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Mansalva|Pacifico&display=swap');
 body{
-    background-attachment: fixed;
-    color: black;
-    background-repeat: no-repeat;
-    background-size: cover; 
-    display: none;
-}
-#obliging{
-    margin: 5% 0 0 0;
-    animation: dpd 2s;
-}
-
-
-#pserror,#userror{
-    color: red;
-    font: bold;
+    width: 100%;
+    height:100vh;
+    background-image: linear-gradient(35deg, #1100ff, #2196F3, #3F51B5, #1100ff);
+    margin: 0;
+    padding: 0;
+    background-size: 400%;
+    animation: 10s backanim infinite;
+    color: #fff;
 }
 
-
-
-
-form{   
-    
-    padding-top: 150px;
-    padding-left: 250px;
-    align-self: center;
-    animation: dpd 2s;
-}
-form input{
-    color: black;
-    margin: 10px;
-}
-form span{
-    color: blue;
-    text-shadow: black;
+.err{
+    position: relative;
+    top: -20px;
+    left: 23px;
 }
 
-
-label{
-    
-    margin-bottom: 0px;
+h6{
+    padding: 0;
+    margin: 0 0 15px 0;
+    text-align: center;
 }
 
-.btn
-{
-    margin: 3px 0px 0px 4px;
+.btn{
+    position: relative;
+    height: 30px;
     border-radius: 5px;
-    color: white;
-    box-shadow:  5px 5px rgba(0,0,0,50%),;
+    border:0;
+    width:85%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Dancing Script', cursive;
+
 }
 
-.btn:hover{
-    
-    box-shadow: 5px 5px black;
+.register {
+    text-align: center;
 }
 
-@keyframes dpd{
-    0%  {opacity: 0;}
-    100%{opacity: 1;}
+.container{
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    padding: 50px 0;
+    background-color: #fff5;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 0;
+    box-shadow: 8px 13px 35px #0007
 }
+.title {
+    text-align: center;
+    font-size: 70px;
+}
+.title a{
+    font-family: 'Dancing Script', cursive;
+    color: #fff!important;
+    text-decoration: none;
+
+}
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255) ;
+}
+
+input{
+    position: relative;
+    height: 30px;
+    width:85%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 0;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(209, 209, 209, 0.459);
+    box-shadow: 4px 1px 10px #0007;
+
+}
+input::after{
+    position: relative;
+    height: 100%;
+    width: 82%;
+    background-color: #000;
+    z-index: 1;
+}
+
+input::placeholder{
+    color:#fff;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 1px;
+}
+
+
+@keyframes backanim{
+    0%{background-position: 0%,40%}
+    50%{background-position: 100%,40%}
+    100%{background-position: 0%,40%}
+}
+
