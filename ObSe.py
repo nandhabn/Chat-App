@@ -4,7 +4,7 @@ ser=Flask(__name__)
 
 database={"totmes":0}
 logedin={}
-login_details={'nandha':{'password':'nandha'},'mani':{"password":"mani"}}
+login_details={}  //to  add user {'name1':{'password':'pass'},'name2':{"password":"pass2"}}
 
 
 @ser.route('/')
@@ -47,7 +47,6 @@ def chat():
                 mes=request.form['mes']
                 pos=int(database['totmes'])
                 database[pos]=dict(uname=uname,mes=mes)
-                print database
                 database["totmes"]=pos+1
                 res=make_response(mes)
                 res.headers['count']=database['totmes']
@@ -89,35 +88,25 @@ def register():
         if(len(fsname)<1 or len(lsname)<1):
             userr='this.innerHTML="^ User name is empty";this.style.display="block";'
             err=True
-            print 'err1'
         if(dept.lower() not in ['cse','it','eee','ece','mech','bme','cvil']):
             dperr='this.innerHTML="^ Department field is invalid";this.style.display="block";'
             err=True
-            print 'err2'
         if not (batch<2020 and batch>=2016):
             bterr='this.innerHTML="^ Batch field is invalid";this.style.display="block";'
             err=True
-            print batch
-            print 'err3'
         if(len(password)==0):
             pserr1='this.innerHTML="^ Password is empty";this.style.display="block";'
             err=True
-            print 'err4'
         if(len(repassword)==0):
             pserr2='this.innerHTML="^ Password is empty";this.style.display="block";'
             err=True
-            print 'err5'
         if(password!=repassword):
             pserr2='this.innerHTML="^ Password is empty";this.style.display="block";'
             err=True
-            print 'err6' + str(password==repassword)
-
         if(err is False):
             login_details[fsname]={'password':password,'dept':dept,'batch':batch}
-            print login_details[fsname]
             return redirect(url_for("login"))
         else:
-            print 'err'
             return render_template('register.html',userr=userr,dperr=dperr,bterr=bterr,pserr1=pserr1,pserr2=pserr2)
                      
     else:
